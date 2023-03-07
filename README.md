@@ -7,3 +7,6 @@ AS A movie buff I WANT to be able to plan a movie night with friends SO THAT we 
 
 ## Wireframe 
 https://wireframe.cc/CAsQDD
+
+## Credit
+[Calendar by Thomas Step](https://rapidapi.com/tstep916/api/calendar22/details)
