@@ -13,6 +13,9 @@
 ---'genre_list' search by genre
 ---'country_list' US is '78'
 
+-Functions
+--Function to call uNoGS API
+--Function to save the Netflix playlist to local storage
 */
 
 //Jquery wrapper
@@ -29,11 +32,14 @@ $(function(){
         'X-RapidAPI-Host': 'unogs-unogs-v1.p.rapidapi.com'
       }
     };
-    
+    //Fetch API call to uNoGS
     fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?limit=20&order_by=date&country_list=78', options)
       .then(response => response.json())
       .then(response => console.log(response))
       .catch(err => console.error(err));
+
+    //Function to save the Netflix playlist to local storage
+    
       
   });
 
