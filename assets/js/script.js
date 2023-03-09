@@ -3,10 +3,8 @@
 
 -The following APIs will be called to perform specific functions
 
--Calendar 
--This API allows us to create a calendar, make edits, and update events
---Parameters
----To be decided..
+-Postmail 
+--Is fully contained in the HTML
 
 -uNoGS (unofficial Netflix online Global Search)
 --This API allows us to get metadata about Netlix movies and shows
@@ -16,3 +14,4 @@
 ---'country_list' US is '78'
 
 */
+
