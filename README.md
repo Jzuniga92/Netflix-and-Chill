@@ -13,4 +13,6 @@ To use this application, please enter a title for a show or movie to watch then 
 https://wireframe.cc/CAsQDD
 
 ## Credit
-[Calendar by Thomas Step](https://rapidapi.com/tstep916/api/calendar22/details)
+[uNoGS](http://unogs.com/)
+
+[Postmail by Invotes](https://postmail.invotes.com/)
