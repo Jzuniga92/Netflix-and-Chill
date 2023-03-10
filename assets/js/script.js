@@ -16,6 +16,7 @@
 -Functions
 --Function to call uNoGS API
 --Function to save the Netflix playlist to local storage
+--Function to populate movie results on screen
 */
 
 //Jquery wrapper
@@ -38,6 +39,13 @@ $(function(){
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
+
+      //Function to populate movie results on screen
+      var populateResults = function (titles){
+        if (titles.length === 0) {
+          
+        }
+      }
 
       //Function to save the Netflix playlist to local storage
       
