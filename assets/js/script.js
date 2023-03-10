@@ -37,13 +37,22 @@ $(function(){
       //Fetch API call to uNoGS
       fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?limit=20&order_by=date&country_list=78', options)
         .then(response => response.json())
-        .then(response => console.log(response))
+        .then(response => {
+          console.log(response);
+          populateResults(response)
+        })
         .catch(err => console.error(err));
 
+      console.log()
       //Function to populate movie results on screen
       var populateResults = function (titles){
+        console.log(titles.results[0]);
         if (titles.length === 0) {
           
+        }
+
+        for (i = 0; i < titles.results.length; i++) {
+          var titleName = titles.results[i]
         }
       }
 
