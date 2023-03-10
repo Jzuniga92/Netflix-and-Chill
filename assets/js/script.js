@@ -23,24 +23,25 @@ $(function(){
   //Jquery handler function
   $(document).ready(function(){
 
-    //Function code provided by API with parameters included
-    //Parameters included: 20 results PP, US country limit
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': '0d055c8f5cmsh911d3bd3fd0acf3p1394b3jsn4a88133a76fd',
-        'X-RapidAPI-Host': 'unogs-unogs-v1.p.rapidapi.com'
-      }
-    };
-    //Fetch API call to uNoGS
-    fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?limit=20&order_by=date&country_list=78', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
+    $('.button.is-danger').click(function() {
+      //Function code provided by API with parameters included
+      //Parameters included: 20 results PP, US country limit
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': '0d055c8f5cmsh911d3bd3fd0acf3p1394b3jsn4a88133a76fd',
+          'X-RapidAPI-Host': 'unogs-unogs-v1.p.rapidapi.com'
+        }
+      };
+      //Fetch API call to uNoGS
+      fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?limit=20&order_by=date&country_list=78', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
 
-    //Function to save the Netflix playlist to local storage
-    
+      //Function to save the Netflix playlist to local storage
       
+    });
   });
 
 });
