@@ -52,7 +52,14 @@ $(function(){
         }
 
         for (i = 0; i < titles.results.length; i++) {
-          var titleName = titles.results[i]
+          var titleArea = $('#resultArea');
+          var titleName = titles.results[i];
+          var temp = '<br>Temperature: ' + cityWeather.main.temp + 'F<br>';
+          console.log(cityWeather.main.temp)
+          var wind = 'Wind Speed: ' + cityWeather.wind.speed +'mph<br>';
+          var humidity = 'Humidity: ' + cityWeather.main.humidity + '%<br>';
+
+          cityArea.append(city,temp,wind,humidity);
         }
       }
 
