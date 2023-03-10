@@ -3,10 +3,8 @@
 
 -The following APIs will be called to perform specific functions
 
--Calendar 
--This API allows us to create a calendar, make edits, and update events
---Parameters
----To be decided..
+-Postmail 
+--Is fully contained in the HTML
 
 -uNoGS (unofficial Netflix online Global Search)
 --This API allows us to get metadata about Netlix movies and shows
@@ -15,4 +13,36 @@
 ---'genre_list' search by genre
 ---'country_list' US is '78'
 
+-Functions
+--Function to call uNoGS API
+--Function to save the Netflix playlist to local storage
 */
+
+//Jquery wrapper
+$(function(){
+  //Jquery handler function
+  $(document).ready(function(){
+
+    $('.button.is-danger').click(function() {
+      //Function code provided by API with parameters included
+      //Parameters included: 20 results PP, US country limit
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': '0d055c8f5cmsh911d3bd3fd0acf3p1394b3jsn4a88133a76fd',
+          'X-RapidAPI-Host': 'unogs-unogs-v1.p.rapidapi.com'
+        }
+      };
+      //Fetch API call to uNoGS
+      fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?limit=20&order_by=date&country_list=78', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+
+      //Function to save the Netflix playlist to local storage
+      
+    });
+  });
+
+});
+
