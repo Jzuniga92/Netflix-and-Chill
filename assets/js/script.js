@@ -52,15 +52,20 @@ $(function(){
         }
         //For loop to parse each result and relevant data
         for (i = 0; i < titles.results.length; i++) {
-          
+          var resList = document.createElement('span');
+          resList.classList = 'is-flex is-justify-content-center m-3'
+
           var titleArea = $('#resultArea');
           titleArea.addClass('is-flex-direction-column');
+          
           var titleName = '<br>Title: ' + titles.results[i].title;
           var synopsis = '<br>Description: ' + titles.results[i].synopsis + '<br>';
           var poster = '<figure class="media-left"><p class="image is-64x64"><img src="' + titles.results[i].img + '"></p></figure>';
           
-
-          titleArea.append(poster,titleName,synopsis);
+          //resList.append(poster,titleName,synopsis);
+          $(resList).html(poster+titleName+synopsis)
+          //resList.addClass('is-flex');
+          titleArea.append(resList);
         }
       }
 
