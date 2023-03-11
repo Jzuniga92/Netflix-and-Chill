@@ -24,7 +24,7 @@ $(function(){
   //Jquery handler function
   $(document).ready(function(){
 
-    $('.button.is-danger').click(function() {
+    $('#searchBtn').click(function() {
       //Function code provided by API with parameters included
       //Parameters included: 20 results PP, US country limit
       const options = {
@@ -50,17 +50,15 @@ $(function(){
         if (titles.length === 0) {
           
         }
-
+        //For loop to parse each result and relevant data
         for (i = 0; i < titles.results.length; i++) {
           
           var titleArea = $('#resultArea');
-          var titleName = titles.results[i];
-          var temp = '<br>Temperature: ' + cityWeather.main.temp + 'F<br>';
-          console.log(cityWeather.main.temp)
-          var wind = 'Wind Speed: ' + cityWeather.wind.speed +'mph<br>';
-          var humidity = 'Humidity: ' + cityWeather.main.humidity + '%<br>';
+          var titleName = '<br>Title: ' + titles.results[i].title;
+          var synopsis = '<br>Description: ' + titles.results[i].synopsis + '<br>';
+          
 
-          cityArea.append(city,temp,wind,humidity);
+          titleArea.append(titleName,synopsis);
         }
       }
 
