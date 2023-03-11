@@ -52,6 +52,7 @@ $(function(){
         }
 
         for (i = 0; i < titles.results.length; i++) {
+          
           var titleArea = $('#resultArea');
           var titleName = titles.results[i];
           var temp = '<br>Temperature: ' + cityWeather.main.temp + 'F<br>';
