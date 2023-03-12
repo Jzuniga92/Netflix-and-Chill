@@ -53,23 +53,23 @@ $(function(){
         //For loop to parse each result and relevant data
         for (i = 0; i < titles.results.length; i++) {
           var resBox = document.createElement('span');
-          resBox.classList = 'is-flex is-child m-3 ml-5'
+          resBox.classList = 'tile is-ancestor'
           
-          var resText = document.createElement('span')
-          resText.classList = 'is-flex is-child is-justify-content-center m-3'
+          var resContent = document.createElement('span')
+          resContent.classList = 'tile is-4 is-vertical'
 
           var titleArea = $('#resultArea');
-          titleArea.addClass('is-flex-direction-column has-background-primary p-1 tile is-parent has-text-white');
+          
           
           var titleName = '<br>Title: ' + titles.results[i].title;
           var synopsis = '<br>Description: ' + titles.results[i].synopsis + '<br>';
           var poster = '<figure class="media-left"><p class="image is-64x64"><img src="' + titles.results[i].img + '"></p></figure>';
           
           //resList.append(poster,titleName,synopsis);
-          $(resBox).html(poster)
-          $(resText).html(titleName+synopsis)
+          $(resContent).html(poster+titleName+synopsis)
+          $(resBox).html(resContent)
           //resList.addClass('is-flex');
-          titleArea.append(resBox,resText);
+          titleArea.append(resBox);
         }
       }
 
