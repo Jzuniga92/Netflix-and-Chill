@@ -52,24 +52,23 @@ $(function(){
         }
         //For loop to parse each result and relevant data
         for (i = 0; i < titles.results.length; i++) {
-          var resBox = document.createElement('span');
-          resBox.classList = 'tile is-ancestor'
+          
           
           var resContent = document.createElement('span')
-          resContent.classList = 'tile is-4 is-vertical'
+          resContent.classList = 'tile is-child box'
 
           var titleArea = $('#resultArea');
           
           
-          var titleName = '<br>Title: ' + titles.results[i].title;
+          var titleName = '<br><p class="title">Title: ' + titles.results[i].title + '</p>';
           var synopsis = '<br>Description: ' + titles.results[i].synopsis + '<br>';
           var poster = '<figure class="media-left"><p class="image is-64x64"><img src="' + titles.results[i].img + '"></p></figure>';
           
           //resList.append(poster,titleName,synopsis);
           $(resContent).html(poster+titleName+synopsis)
-          $(resBox).html(resContent)
+          
           //resList.addClass('is-flex');
-          titleArea.append(resBox);
+          titleArea.append(resContent);
         }
       }
 
