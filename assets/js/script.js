@@ -54,18 +54,19 @@ $(function(){
         for (i = 0; i < titles.results.length; i++) {
           
           
-          var resContent = document.createElement('span')
+          var resContent = document.createElement('article')
           resContent.classList = 'tile is-child box'
 
           var titleArea = $('#resultArea');
           
-          
+          //These are variables to store the HTML formatting for cards
           var titleName = '<br><p class="title">Title: ' + titles.results[i].title + '</p>';
-          var synopsis = '<br>Description: ' + titles.results[i].synopsis + '<br>';
+          var synopsis = '<br><p class="content">Description: ' + titles.results[i].synopsis + '<br></p>';
           var poster = '<figure class="media-left"><p class="image is-64x64"><img src="' + titles.results[i].img + '"></p></figure>';
-          
+          var saveBtn = '<div class="control"><button class="button is-primary">Save</button></div>'
+
           //resList.append(poster,titleName,synopsis);
-          $(resContent).html(poster+titleName+synopsis)
+          $(resContent).html(poster+titleName+synopsis+saveBtn)
           
           //resList.addClass('is-flex');
           titleArea.append(resContent);
