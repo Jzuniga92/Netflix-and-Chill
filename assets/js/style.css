@@ -1,3 +1,4 @@
-body{
-    
+.tile.is-child.box {
+  display: grid;
+  justify-items: start;
 }

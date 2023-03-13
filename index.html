@@ -27,8 +27,8 @@
             <p class="title">What Are We Watching!</p>
            <!-- <p class="subtitle"></p> -->
             <div class="content">
-              <input class="input is-primary is-medium" type="text" placeholder="Title Search">
-               <button class="button is-normal is-success is-light">
+              <input id="searchText" class="input is-primary is-medium" type="text" placeholder="Title Search">
+               <button id="searchBtn" class="button is-normal is-success is-light">
                 Search
                </button>
             </div>
@@ -84,9 +84,11 @@
       </div>
     </div>
 
-<div id="resultArea" class="is-flex is-justify-content-center">placeholder</div>
+<!--<div id="resultArea" class="tile is-parent">placeholder</div>-->
 
-
+    <div class="tile is-ancestor container">
+      <div id="resultArea" class="tile is-4 is-vertical is-parent container"></div>
+    </div>
 
 
     <footer class="footer">

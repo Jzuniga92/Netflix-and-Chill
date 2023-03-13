@@ -23,8 +23,8 @@
 $(function(){
   //Jquery handler function
   $(document).ready(function(){
-
-    $('.button.is-danger').click(function() {
+    //Event listener for search button
+    $('#searchBtn').click(function() {
       //Function code provided by API with parameters included
       //Parameters included: 20 results PP, US country limit
       const options = {
@@ -34,37 +34,64 @@ $(function(){
           'X-RapidAPI-Host': 'unogs-unogs-v1.p.rapidapi.com'
         }
       };
+
+      
+
       //Fetch API call to uNoGS
       fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?limit=20&order_by=date&country_list=78', options)
         .then(response => response.json())
         .then(response => {
           console.log(response);
-          populateResults(response)
+          populateResults(response);
         })
         .catch(err => console.error(err));
 
-      console.log()
+       
+
       //Function to populate movie results on screen
       var populateResults = function (titles){
         console.log(titles.results[0]);
         if (titles.length === 0) {
           
         }
-
+        //For loop to parse each result and relevant data
         for (i = 0; i < titles.results.length; i++) {
-          var titleArea = $('#resultArea');
-          var titleName = titles.results[i];
-          var temp = '<br>Temperature: ' + cityWeather.main.temp + 'F<br>';
-          console.log(cityWeather.main.temp)
-          var wind = 'Wind Speed: ' + cityWeather.wind.speed +'mph<br>';
-          var humidity = 'Humidity: ' + cityWeather.main.humidity + '%<br>';
+          
+          
+          var resContent = document.createElement('article')
+          resContent.classList = 'tile is-child box'
+          $(resContent).attr('id', 'title'+i);
 
-          cityArea.append(city,temp,wind,humidity);
+          var titleArea = $('#resultArea');
+          
+          //These are variables to store the HTML formatting for cards
+          var titleName = '<br><p class="title">Title: ' + titles.results[i].title + '</p>';
+          var synopsis = '<br><p class="content">Description: ' + titles.results[i].synopsis + '<br></p>';
+          var poster = '<figure class="media-left"><p class="image is-64x64"><img src="' + titles.results[i].img + '"></p></figure>';
+          var saveBtn = '<div class="control"><button id="saveBtn" class="button is-primary">Save</button></div>'
+
+          //resList.append(poster,titleName,synopsis);
+          $(resContent).html(poster+titleName+synopsis+saveBtn)
+          
+          //resList.addClass('is-flex');
+          titleArea.append(resContent);
         }
       }
 
       //Function to save the Netflix playlist to local storage
-      
+      $('#saveBtn').click(function() {
+        
+          console.log('Saved successful')
+          var titleSave = {
+            title: titles.results.title,
+            synopsis: titles.results.synopsis,
+            poster: titles.results.img
+          }
+  
+          localStorage.setItem('savedMovie', JSON.stringify(titleSave));
+        
+      }); 
+
     });
   });
 
