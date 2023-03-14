@@ -24,7 +24,7 @@ $(function(){
   //Jquery handler function
   $(document).ready(function(){
     //Event listener for search button
-    $('#searchBtn').click(function() {
+    $('#searchBtn').click(function(event) {
       //Function code provided by API with parameters included
       //Parameters included: 20 results PP, US country limit
       const options = {
@@ -38,14 +38,16 @@ $(function(){
       
 
       //Fetch API call to uNoGS
-      fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?limit=20&order_by=date&country_list=78', options)
+      fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?limit=20&order_by=date&country_list=78&title='+$('#searchText').val(), options)
         .then(response => response.json())
         .then(response => {
           console.log(response);
           populateResults(response);
+          contentData = response;
         })
         .catch(err => console.error(err));
 
+        var contentData;
        
 
       //Function to populate movie results on screen
@@ -68,7 +70,7 @@ $(function(){
           var titleName = '<br><p class="title">Title: ' + titles.results[i].title + '</p>';
           var synopsis = '<br><p class="content">Description: ' + titles.results[i].synopsis + '<br></p>';
           var poster = '<figure class="media-left"><p class="image is-64x64"><img src="' + titles.results[i].img + '"></p></figure>';
-          var saveBtn = '<div class="control"><button id="saveBtn" class="button is-primary">Save</button></div>'
+          var saveBtn = '<div class="control"><button class="button is-primary">Save</button></div>'
 
           //resList.append(poster,titleName,synopsis);
           $(resContent).html(poster+titleName+synopsis+saveBtn)
@@ -79,15 +81,16 @@ $(function(){
       }
 
       //Function to save the Netflix playlist to local storage
-      $('#saveBtn').click(function() {
-        
-          console.log('Saved successful')
+      $('#resultArea').on('click','button',function(event) {
+          event.preventDefault();
+          console.log($(this))
           var titleSave = {
-            title: titles.results.title,
-            synopsis: titles.results.synopsis,
-            poster: titles.results.img
+            title: contentData,
+            synopsis: contentData.results.synopsis,
+            poster: contentData.results.img
           }
-  
+          console.log(titleSave)
+          console.log(contentData)
           localStorage.setItem('savedMovie', JSON.stringify(titleSave));
         
       }); 
