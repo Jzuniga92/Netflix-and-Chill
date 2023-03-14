@@ -59,7 +59,8 @@ $(function(){
           
           
           var resContent = document.createElement('article')
-          resContent.classList = 'tile is-child box'
+          resContent.classList = 'tile is-child box is-4'
+          resContent.style.margin = "5% 5%"
           $(resContent).attr('id', 'title'+i);
 
           var titleArea = $('#resultArea');

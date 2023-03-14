@@ -2,3 +2,7 @@
   display: grid;
   justify-items: start;
 }
+#resultArea{
+  width: 100vw;
+  flex-wrap: wrap;
+}
