@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,94 +13,90 @@
 
 <body>
   <section class="hero is-large is-info">
-      <div class="hero-body">
-        <p class="title">
-          Netflix and Chill
-        </p>
-        <p class="subtitle">
-          Invite Family and Friends for a Night of Netflix and Chill
-        </p>
-      </div>
-    </section>
-
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-danger">
-            <p class="title">What Are We Watching!</p>
-           <!-- <p class="subtitle"></p> -->
-            <div class="content">
-              <input id="searchText" class="input is-primary is-medium" type="text" placeholder="Title Search">
-               <button id="searchBtn" class="button is-normal is-success is-light">
-                Search
-               </button>
-            </div>
-          </article>
+    <div class="hero-body">
+      <p class="title">
+        Netflix and Chill
+      </p>
+      <p class="subtitle">
+        Invite Family and Friends for a Night of Netflix and Chill
+      </p>
+    </div>
+  </section>
+  <div class="container is-flex is-mobile">
+    <div class="tile is-parent is-6">
+      <article class="tile is-child notification is-danger">
+        <p class="title">What Are We Watching!</p>
+        <!-- <p class="subtitle"></p> -->
+        <div class="content">
+          <input id="searchText" class="input is-primary is-medium" type="text" placeholder="Title Search">
+          <button id="searchBtn" class="button is-normal is-success is-light">
+            Search
+          </button>
         </div>
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-success">
+      </article>
+    </div>
+
+    <div class="tile is-parent is-4">
+      <article class="tile is-child notification is-success">
+        <div class="content">
+          <p class="title">Send Your Invite</p>
+          <!-- <p class="subtitle"></p> -->
           <div class="content">
-            <p class="title">Send Your Invite</p>
-            <!-- <p class="subtitle"></p> -->
-            <div class="content">
-              <!-- Content -->
-              <form action="https://postmail.invotes.com/send"
-  method="post" id="email_form">
-  <input type="text" name="subject" placeholder="Subject" />
-  <textarea name="text" placeholder="Message"></textarea>
-  <input type="hidden" name="access_token" value="lg89lyetfdna8tsjasqtrera" />
-    <!-- return urls can be fully qualified -OR-
+            <!-- Content -->
+            <form action="https://postmail.invotes.com/send" method="post" id="email_form">
+              <input type="text" name="subject" placeholder="Subject" />
+              <textarea name="text" placeholder="Message"></textarea>
+              <input type="hidden" name="access_token" value="lg89lyetfdna8tsjasqtrera" />
+              <!-- return urls can be fully qualified -OR-
       start with / for root relative -OR-
       start with . for url relative -->
-  <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
-  <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
-  <!-- set the reply-to address -->
-  <!-- <input type="text" name="reply_to"
-              placeholder="Your Email" /> -->
-  <!-- to append extra fields, use the extra_ prefix.
+              <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+              <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+              <!-- set the reply-to address -->
+              <input type="text" name="reply_to" placeholder="Your Email" />
+              <!-- to append extra fields, use the extra_ prefix.
       Entries will be appended to your message body. -->
-  <!-- <input type="text" name="extra_phone_number"
-              placeholder="Phone Number" /> -->
-  <!-- to split your message into 160 chars
+              <input type="text" name="extra_phone_number" placeholder="Phone Number" />
+              <!-- to split your message into 160 chars
       for an sms gateway -->
-  <!-- <input type="hidden"
-              name="sms_format" value="true" /> -->
-  <input id="submit_form" type="submit" value="Send" />
-  <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
-</form>
-<!-- optional, prevents the submit button from being pressed more than once -->
-<script>
-  var submitButton = document.getElementById("submit_form");
-  var form = document.getElementById("email_form");
-  form.addEventListener("submit", function (e) {
-      setTimeout(function() {
-          submitButton.value = "Sending...";
-          submitButton.disabled = true;
-      }, 1);
-  });
-</script>
-              
-            </div>
+              <input type="hidden" name="sms_format" value="true" />
+              <input id="submit_form" type="submit" value="Send" />
+              <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
+            </form>
+            <!-- optional, prevents the submit button from being pressed more than once -->
+            <script>
+              var submitButton = document.getElementById("submit_form");
+              var form = document.getElementById("email_form");
+              form.addEventListener("submit", function (e) {
+                setTimeout(function () {
+                  submitButton.value = "Sending...";
+                  submitButton.disabled = true;
+                }, 1);
+              });
+            </script>
+
           </div>
-        </article>
-      </div>
+        </div>
+      </article>
     </div>
+  </div>
 
-<!--<div id="resultArea" class="tile is-parent">placeholder</div>-->
+  <!-- <div id="resultArea" class="tile is-parent">placeholder</div> -->
 
-    <div class="tile is-ancestor container">
-      <div id="resultArea" class="tile is-4 is-vertical is-parent container"></div>
+  <div class=" is-ancestor container">
+    <div id="resultArea" class="is-4 is-vertical is-parent container is-flex"></div>
+  </div>
+  </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
     </div>
-
-
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-        </p>
-      </div>
-    </footer>
+  </footer>
 </body>
 
 
