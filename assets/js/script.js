@@ -3,8 +3,11 @@
 
 -The following APIs will be called to perform specific functions
 
--Postmail 
---Is fully contained in the HTML
+-Expected behavior
+--When a user makes an API call they can save this data to local 
+----storage and send that data through email to a friend
+--If the API does not retrieve the correct data or response error
+----there will be a message on screen to inform them
 
 -uNoGS (unofficial Netflix online Global Search)
 --This API allows us to get metadata about Netlix movies and shows
