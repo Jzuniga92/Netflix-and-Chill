@@ -6,3 +6,12 @@
   width: 100vw;
   flex-wrap: wrap;
 }
+.bg-img { 
+  background-image: url(.IMG_7114.jpg) ;
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size:  cover;
+  background-color: #999;
+
+}
