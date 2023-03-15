@@ -9,10 +9,17 @@ AS A movie buff I WANT to be able to plan a movie night with friends SO THAT we 
 ## Usage
 To use this application, please enter a title for a show or movie to watch then save these items into your playlist. Once finished, you can send an email of the items you gathered to your friends or family.
 
+
+## Link
+Deployed application: https://jzuniga92.github.io/Netflix-and-Chill/ 
+GitHub Repo: https://github.com/Jzuniga92/Netflix-and-Chill 
+
 ## Wireframe 
 https://wireframe.cc/CAsQDD
 
 ## Credit
 [uNoGS](http://unogs.com/)
 
-[Postmail by Invotes](https://postmail.invotes.com/)
+[GetForm.io](https://app.getform.io/forms)
+
+[Zapier](https://zapier.com/app/dashboard)

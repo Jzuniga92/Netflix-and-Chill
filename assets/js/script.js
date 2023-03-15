@@ -3,8 +3,11 @@
 
 -The following APIs will be called to perform specific functions
 
--Postmail 
---Is fully contained in the HTML
+-Expected behavior
+--When a user makes an API call they can save this data to local 
+----storage and send that data through email to a friend
+--If the API does not retrieve the correct data or response error
+----there will be a message on screen to inform them
 
 -uNoGS (unofficial Netflix online Global Search)
 --This API allows us to get metadata about Netlix movies and shows
@@ -84,18 +87,29 @@ $(function(){
       //Function to save the Netflix playlist to local storage
       $('#resultArea').on('click','button',function(event) {
           event.preventDefault();
+          //Clears text from message text area if another movie is clicked
+          $('#messageText').empty();
 
           //console.log($(this))
+          //This variable contains the data for this particular card
           var titleSave = {
             title: $(this).parent().prevAll().eq(2).text(),
             synopsis: $(this).parent().prevAll().eq(0).text(),
-            poster: $(this).parent().prevAll().eq(4).find('img').attr('src')
+            //poster: $(this).parent().prevAll().eq(4).find('img').attr('src')
+            poster: $(this).parent().prevAll().eq(4).html()
           }
+          //console.log($(this).parent().prevAll().eq(4).html());
           //console.log($(this).parent().prevAll().eq());
           //console.log($(this).parent().prevAll().eq(4).find('img').attr('src'));
-
+          //This function stores this var to local storage
           localStorage.setItem('savedMovie', JSON.stringify(titleSave));
           console.log(JSON.parse(localStorage.getItem('savedMovie')))
+          //This var is stores the stored information
+          var movie = JSON.parse(localStorage.getItem('savedMovie'));
+          console.log(movie.poster)
+          //Once clicked this will add the title info to the email message text box 
+          $('#messageText').append(
+          "Hello, I would like to watch this movie with you! Here's a bit of info about it.\n" + '\n' + movie.title+ '<br>\n\n' + movie.synopsis)
         
       }); 
 
