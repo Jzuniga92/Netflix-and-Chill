@@ -43,37 +43,69 @@
           <!-- <p class="subtitle"></p> -->
           <div class="content">
             <!-- Content -->
-            <form action="https://postmail.invotes.com/send" method="post" id="email_form">
-              <input type="text" name="subject" placeholder="Subject" />
-              <textarea name="text" placeholder="Message"></textarea>
-              <input type="hidden" name="access_token" value="lg89lyetfdna8tsjasqtrera" />
-              <!-- return urls can be fully qualified -OR-
-      start with / for root relative -OR-
-      start with . for url relative -->
-              <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
-              <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
-              <!-- set the reply-to address -->
-              <input type="text" name="reply_to" placeholder="Your Email" />
-              <!-- to append extra fields, use the extra_ prefix.
-      Entries will be appended to your message body. -->
-              <input type="text" name="extra_phone_number" placeholder="Phone Number" />
-              <!-- to split your message into 160 chars
-      for an sms gateway -->
-              <input type="hidden" name="sms_format" value="true" />
-              <input id="submit_form" type="submit" value="Send" />
-              <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
-            </form>
-            <!-- optional, prevents the submit button from being pressed more than once -->
-            <script>
-              var submitButton = document.getElementById("submit_form");
-              var form = document.getElementById("email_form");
-              form.addEventListener("submit", function (e) {
-                setTimeout(function () {
-                  submitButton.value = "Sending...";
-                  submitButton.disabled = true;
-                }, 1);
-              });
-            </script>
+            <div>
+              <form
+                action="https://getform.io/f/811bb012-7339-4e10-8e3e-a148a7545af7"
+                method="POST"
+                enctype="multipart/form-data"
+                target="_blank"
+                id="emailForm"
+              >
+                <div>
+                  <label>Full Name</label>
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Enter your name"
+                      required="required"
+                    />
+                  </div>
+                </div>
+                <br />
+                <div>
+                  <input
+                    type="email"
+                    name="returnEmail"
+                    placeholder="Enter your email address "
+                    required="required"
+                  />
+                  <label>(Gmail only)</label>
+                  <br>
+                </div>
+                <br />
+                <div>
+                  <input
+                    type="email"
+                    name="sendEmail"
+                    placeholder="Enter their email address"
+                    required="required"
+                  />
+                </div>
+                <br />
+                <div>
+                  <label>Your message</label>
+                  <div>
+                    <textarea
+                      name="message"
+                      id="messageText"
+                      type="text"
+                      placeholder="Enter your message"
+                      required="required"
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                  </div>
+                </div>
+                
+                <br>
+                <input 
+                  type="hidden" 
+                  name="utf8" 
+                  value="✓">
+                  <button type="submit">submit</button>
+              </form>
+            </div>
 
           </div>
         </div>
