@@ -89,16 +89,25 @@ $(function(){
           event.preventDefault();
 
           //console.log($(this))
+          //This variable contains the data for this particular card
           var titleSave = {
             title: $(this).parent().prevAll().eq(2).text(),
             synopsis: $(this).parent().prevAll().eq(0).text(),
-            poster: $(this).parent().prevAll().eq(4).find('img').attr('src')
+            //poster: $(this).parent().prevAll().eq(4).find('img').attr('src')
+            poster: $(this).parent().prevAll().eq(4).html()
           }
+          //console.log($(this).parent().prevAll().eq(4).html());
           //console.log($(this).parent().prevAll().eq());
           //console.log($(this).parent().prevAll().eq(4).find('img').attr('src'));
-
+          //This function stores this var to local storage
           localStorage.setItem('savedMovie', JSON.stringify(titleSave));
           console.log(JSON.parse(localStorage.getItem('savedMovie')))
+          //This var is stores the stored information
+          var movie = JSON.parse(localStorage.getItem('savedMovie'));
+          console.log(movie.poster)
+          //Once clicked this will add the title info to the email message text box 
+          $('#messageText').append(
+          "Hello, I would like to watch this movie with you! Here's a bit of info about it.\n" + '\n' + movie.title+ '<br>\n\n' + movie.synopsis)
         
       }); 
 
