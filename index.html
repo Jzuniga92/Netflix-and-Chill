@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/js/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <title>Netflix and Chill</title>
@@ -43,9 +43,69 @@
           <!-- <p class="subtitle"></p> -->
           <div class="content">
             <!-- Content -->
-
-
-
+            <div>
+              <form
+                action="https://getform.io/f/811bb012-7339-4e10-8e3e-a148a7545af7"
+                method="POST"
+                enctype="multipart/form-data"
+                target="_blank"
+                id="emailForm"
+              >
+                <div>
+                  <label>Full Name</label>
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Enter your name"
+                      required="required"
+                    />
+                  </div>
+                </div>
+                <br />
+                <div>
+                  <input
+                    type="email"
+                    name="returnEmail"
+                    placeholder="Enter your email address "
+                    required="required"
+                  />
+                  <label>(Gmail only)</label>
+                  <br>
+                </div>
+                <br />
+                <div>
+                  <input
+                    type="email"
+                    name="sendEmail"
+                    placeholder="Enter their email address"
+                    required="required"
+                  />
+                </div>
+                <br />
+                <div>
+                  <label>Your message</label>
+                  <div>
+                    <textarea
+                      name="message"
+                      id="messageText"
+                      type="text"
+                      placeholder="Enter your message"
+                      required="required"
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                  </div>
+                </div>
+                
+                <br>
+                <input 
+                  type="hidden" 
+                  name="utf8" 
+                  value="✓">
+                  <button type="submit" class="button is-normal is-success is-light">Submit</button>
+              </form>
+            </div>
 
           </div>
         </div>
