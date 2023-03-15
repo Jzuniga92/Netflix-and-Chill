@@ -87,6 +87,8 @@ $(function(){
       //Function to save the Netflix playlist to local storage
       $('#resultArea').on('click','button',function(event) {
           event.preventDefault();
+          //Clears text from message text area if another movie is clicked
+          $('#messageText').empty();
 
           //console.log($(this))
           //This variable contains the data for this particular card
