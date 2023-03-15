@@ -84,6 +84,7 @@ $(function(){
       //Function to save the Netflix playlist to local storage
       $('#resultArea').on('click','button',function(event) {
           event.preventDefault();
+
           //console.log($(this))
           var titleSave = {
             title: $(this).parent().prevAll().eq(2).text(),
@@ -92,6 +93,7 @@ $(function(){
           }
           //console.log($(this).parent().prevAll().eq());
           //console.log($(this).parent().prevAll().eq(4).find('img').attr('src'));
+
           localStorage.setItem('savedMovie', JSON.stringify(titleSave));
           console.log(JSON.parse(localStorage.getItem('savedMovie')))
         
