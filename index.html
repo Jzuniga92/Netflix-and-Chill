@@ -12,18 +12,19 @@
 </head>
 
 <body>
-  <section class="hero is-large is-info">
-    <div class="hero-body">
-      <p class="title">
-        Netflix and Chill
+  <section class="hero is-info is-10">
+    <div class="hero-body image is 2by2">
+      <p class="title has-text-centered has-text-weight-bold is-size-1">
+        NETFLIX AND CHILL
       </p>
-      <p class="subtitle">
+      <img src="./assets/images/Screenshot 2023-03-15 at 2.23.19 AM.png">
+      <p class="subtitle has-text-centered is-size-3">
         Invite Family and Friends for a Night of Netflix and Chill
       </p>
     </div>
   </section>
   <div class="container is-flex">
-    <div class="tile is-parent is-8">
+    <div class="tile is-parent is-">
       <article class="tile is-child notification is-danger">
         <p class="title">What Are We Watching!</p>
         <!-- <p class="subtitle"></p> -->
@@ -36,7 +37,7 @@
       </article>
     </div>
 
-    <div class="tile is-parent is-5 is-vcentered">
+    <div class="tile is-parent is-4">
       <article class="tile is-child notification is-success">
         <div class="content">
           <p class="title">Send Your Invite</p>
@@ -44,66 +45,36 @@
           <div class="content">
             <!-- Content -->
             <div>
-              <form
-                action="https://getform.io/f/811bb012-7339-4e10-8e3e-a148a7545af7"
-                method="POST"
-                enctype="multipart/form-data"
-                target="_blank"
-                id="emailForm"
-              >
+              <form action="https://getform.io/f/811bb012-7339-4e10-8e3e-a148a7545af7" method="POST"
+                enctype="multipart/form-data" target="_blank" id="emailForm">
                 <div>
                   <label>Full Name</label>
                   <div>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Enter your name"
-                      required="required"
-                    />
+                    <input type="text" name="name" placeholder="Enter your name" required="required" />
                   </div>
                 </div>
                 <br />
                 <div>
-                  <input
-                    type="email"
-                    name="returnEmail"
-                    placeholder="Enter your email address "
-                    required="required"
-                  />
+                  <input type="email" name="returnEmail" placeholder="Enter your email address " required="required" />
                   <label>(Gmail only)</label>
                   <br>
                 </div>
                 <br />
                 <div>
-                  <input
-                    type="email"
-                    name="sendEmail"
-                    placeholder="Enter their email address"
-                    required="required"
-                  />
+                  <input type="email" name="sendEmail" placeholder="Enter their email address" required="required" />
                 </div>
                 <br />
                 <div>
                   <label>Your message</label>
                   <div>
-                    <textarea
-                      name="message"
-                      id="messageText"
-                      type="text"
-                      placeholder="Enter your message"
-                      required="required"
-                      cols="30"
-                      rows="10"
-                    ></textarea>
+                    <textarea name="message" id="messageText" type="text" placeholder="Enter your message"
+                      required="required" cols="30" rows="10"></textarea>
                   </div>
                 </div>
-                
+
                 <br>
-                <input 
-                  type="hidden" 
-                  name="utf8" 
-                  value="✓">
-                  <button type="submit" class="button is-normal is-success is-light">Submit</button>
+                <input type="hidden" name="utf8" value="✓">
+                <button type="submit" class="button is-normal is-success is-light">Submit</button>
               </form>
             </div>
 
