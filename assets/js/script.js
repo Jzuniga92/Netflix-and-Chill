@@ -45,16 +45,28 @@ $(function(){
         .then(response => response.json())
         .then(response => {
           console.log(response);
-          populateResults(response);
-          contentData = response;
+          //Function to check if the response is null and produce a message if true
+          if (response.results === null) {
+            $('#resultArea').html('No results found.');
+          } else {
+            populateResults(response);
+          }
         })
         .catch(err => console.error(err));
 
-        var contentData;
        
 
       //Function to populate movie results on screen
       var populateResults = function (titles){
+        //Function to check if there is text in the search bar and to clear when there is a new search
+        if ($('#resultArea').html().trim().length){
+          $('#resultArea').empty();
+        }
+
+        if (!titles || !titles.results || titles.results.length === 0) {
+          return;
+        }
+
         console.log(titles.results[0]);
         if (titles.length === 0) {
           
